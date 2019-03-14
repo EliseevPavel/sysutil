@@ -287,7 +287,7 @@ func GetCPUInfo() (CPUInfo){
 	cpu, _ := cpu.Get()
 	cpuinfo.FreeMemCPU=uint64(memory.Free/MB)
 	cpuinfo.UsedMemCPU=uint64(memory.Used/MB)
-	cpuinfo.LoadAVG=Round(lgv.Loadavg1/float64(cpu.CPUCount),3)
+	cpuinfo.LoadAVG=Round(lgv.Loadavg1/float64(cpu.CPUCount)*100,0)
 	cpuinfo.Temperature=getTemp()
 	return cpuinfo
 
